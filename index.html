@@ -6,8 +6,34 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello Rufus</h1>
+    <h1>Hello Rufus Good morning</h1>
 
+    <p>Today is {{ date('Y/m/d') }}.</p>
     
+    @if (count($people))
+        <ul>
+            @foreach ($people as $person)
+                <li>{{ $person }}</li>
+            @endforeach
+        </ul>
+    @endifcd
+
+    @for ($i = 0; $i < count($numbers); $i++)
+        The number {{ $i }} is {{ $numbers[$i] }}.<br />
+    @endfor
+
+    <?php $myVariable = 'Rufus'; ?>
+    <p>My variable says: {{ $myVariable }}</p>
+
+    @include('partials.header', ['name' => 'Rufus'])
+       <br />
+    @section('sidebar')
+        This is the master sidebar.
+    @show
+
+    @extends('layouts.app')
+   <a href="https://www.youtube.com/shorts/ygo-qV4ZuiM" target="_blank">Click Here</a>
+
+
 </body>
 </html>
